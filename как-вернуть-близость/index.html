@@ -126,11 +126,50 @@
             </div>
           </div>
 
-          <div class="mbr-section-btn">
-            <a class="btn btn-primary display-7" href="https://kurs-vebinar.ru/1694876" target="_blank">
-              Узнать, как вернуть близость — записаться на вебинар
-            </a>
-          </div>
+<div class="mbr-section-btn" style="text-align:center; width:100%;">
+  <a class="btn btn-primary display-7" href="https://kurs-vebinar.ru/1694876" target="_blank" style="margin:auto; display:inline-block;">
+    Узнать все нюансы, как вернуть близость — записаться на вебинар
+  </a>
+</div>
+<!-- Блок с текстом и фразами -->
+<div style="text-align:center; margin-top: 30px;">
+  <p style="font-size: 20px; font-weight: 600;">
+    Вы разберетесь во всех этих вопросах после просмотра вебинара:
+  </p>
+
+  <p id="changing-phrase" style="font-size: 22px; font-weight: bold; min-height: 30px;">
+    <!-- Здесь будут появляться фразы -->
+  </p>
+</div>
+
+<script>
+// Загружаем фразы из файла phrazes.txt
+fetch("phrazes.txt")
+  .then(response => response.text())
+  .then(text => {
+      // Поддержка фраз через запятую, точку с запятой ИЛИ в столбик
+      let phrases;
+      if (text.includes(",")) phrases = text.split(",");
+      else if (text.includes(";")) phrases = text.split(";");
+      else phrases = text.split("\n");
+
+      // Удаляем пустые строки и пробелы
+      phrases = phrases.map(p => p.trim()).filter(p => p.length > 0);
+
+      let index = 0;
+      const box = document.getElementById("changing-phrase");
+
+      function showNextPhrase() {
+          box.textContent = phrases[index];
+          index = (index + 1) % phrases.length;
+      }
+
+      showNextPhrase();                 // показать первую
+      setInterval(showNextPhrase, 850); // смена каждые 0.85 секунды
+  })
+  .catch(err => console.error("Ошибка загрузки phrazes.txt:", err));
+</script>
+
 
         </div>
       </div>
