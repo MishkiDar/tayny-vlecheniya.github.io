@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Спасибо за регистрацию</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      padding: 20px;
+    }
+
+    #message {
+      font-size: 26px;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+      var url = "https://t.me/eva_pivatecollege_bot?start=id544518669";
+
+      // Показываем текст 1 секунду → затем редирект
+      setTimeout(function() {
+        var newWindow = window.open(url, "_blank");
+
+        if (newWindow) {
+          window.close();
+        } else {
+          // Если заблокировано — редиректим в этой же вкладке
+          window.location.href = url;
+        }
+      }, 1000);
+    };
+  </script>
+</head>
+<body>
+
+  <div id="message">
+    <strong>Благодарю за регистрацию на вебинаре!</strong><br><br>
+    Сейчас откроется мой Telegram-канал,<br>
+    где я делюсь с вами в онлайн-режиме<br>
+    всем самым важным и интересным.
+  </div>
+
+</body>
+</html>
