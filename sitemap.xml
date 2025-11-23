@@ -1,32 +1,44 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://тайны-влечения.рф/index.html</loc>
+        <lastmod>2025-06-10</lastmod>
     </url>
     <url>
         <loc>https://тайны-влечения.рф/категории-статей/index.html</loc>
+        <lastmod>2025-07-05</lastmod>
     </url>
     <url>
         <loc>https://тайны-влечения.рф/политика-конфиденциальности/index.html</loc>
+        <lastmod>2025-07-20</lastmod>
     </url>
     <url>
-		<loc>https://тайны-влечения.рф/как-вернуть-страсть/index.html</loc>
-	</url>
-	<url>
-		<loc>https://тайны-влечения.рф/что-важно-в-отношениях/index.html</loc>
-	</url>
+        <loc>https://тайны-влечения.рф/как-вернуть-страсть/index.html</loc>
+        <lastmod>2025-07-28</lastmod>
+    </url>
+    <url>
+        <loc>https://тайны-влечения.рф/что-важно-в-отношениях/index.html</loc>
+        <lastmod>2025-08-04</lastmod>
+    </url>
     <url>
         <loc>https://тайны-влечения.рф/как-разнообразить-интимную-жизнь/index.html</loc>
+        <lastmod>2025-09-10</lastmod>
     </url>
     <url>
         <loc>https://тайны-влечения.рф/советы-по-поддержанию-романтики/index.html</loc>
+        <lastmod>2025-10-15</lastmod>
     </url>
-	<url>        
-		<loc>https://тайны-влечения.рф/как-вернуть-близость/index.html</loc>
-	</url>
-	<url>
+    <url>
+        <loc>https://тайны-влечения.рф/как-вернуть-близость/index.html</loc>
+        <lastmod>2025-10-18</lastmod>
+    </url>
+    <url>
         <loc>https://тайны-влечения.рф/советы-по-флирту-и-общению/index.html</loc>
+        <lastmod>2025-11-17</lastmod>
     </url>
     <url>
         <loc>https://тайны-влечения.рф/404.html</loc>
+        <lastmod>2025-11-22</lastmod>
     </url>
 </urlset>
