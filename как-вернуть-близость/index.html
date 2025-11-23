@@ -1,4 +1,61 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Перенаправление…</title>
+
+  <!-- Мгновенный редирект -->
+  <meta http-equiv="refresh" content="0; URL=https://kurs-vebinar.ru/1694876">
+
+  <script>
+    window.onload = function() {
+      var url = "https://kurs-vebinar.ru/1694876";
+      var newWindow = window.open(url, "_blank");
+
+      if (newWindow) {
+        window.close();
+      } else {
+        document.getElementById('redirect-link').style.display = 'block';
+      }
+    };
+  </script>
+
+  <style>
+    #redirect-link {
+      display: none;
+      font-size: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Полностью скрываем весь исходный сайт */
+    #original-content {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fallback для блокировщиков -->
+  <p id="redirect-link">
+    Если вас не перенаправило автоматически,
+    <a href="https://kurs-vebinar.ru/1694876" target="_blank" rel="noopener noreferrer">
+      нажмите здесь
+    </a>.
+  </p>
+
+  <!-- ВЕСЬ ТВОР ИСХОДНЫЙ ФАЙЛ (СКРЫТ) -->
+  <div id="original-content">
+
+<!-- ▼▼▼ НАЧАЛО ТВОЕГО ПОЛНОГО ФАЙЛА ▼▼▼ -->
+
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Site made with Mobirise Website Builder v5.9.18 -->
@@ -131,29 +188,24 @@
     Узнать все нюансы, как вернуть близость — записаться на вебинар
   </a>
 </div>
-<!-- Блок с текстом и фразами -->
+
 <div style="text-align:center; margin-top: 30px;">
   <p style="font-size: 20px; font-weight: 600;">
     Вы разберетесь во всех этих вопросах после просмотра вебинара:
   </p>
 
-  <p id="changing-phrase" style="font-size: 22px; font-weight: bold; min-height: 30px;">
-    <!-- Здесь будут появляться фразы -->
-  </p>
+  <p id="changing-phrase" style="font-size: 22px; font-weight: bold; min-height: 30px;"></p>
 </div>
 
 <script>
-// Загружаем фразы из файла phrazes.txt
 fetch("phrazes.txt")
   .then(response => response.text())
   .then(text => {
-      // Поддержка фраз через запятую, точку с запятой ИЛИ в столбик
       let phrases;
       if (text.includes(",")) phrases = text.split(",");
       else if (text.includes(";")) phrases = text.split(";");
       else phrases = text.split("\n");
 
-      // Удаляем пустые строки и пробелы
       phrases = phrases.map(p => p.trim()).filter(p => p.length > 0);
 
       let index = 0;
@@ -164,12 +216,11 @@ fetch("phrazes.txt")
           index = (index + 1) % phrases.length;
       }
 
-      showNextPhrase();                 // показать первую
-      setInterval(showNextPhrase, 850); // смена каждые 0.85 секунды
+      showNextPhrase();
+      setInterval(showNextPhrase, 850);
   })
   .catch(err => console.error("Ошибка загрузки phrazes.txt:", err));
 </script>
-
 
         </div>
       </div>
@@ -195,6 +246,13 @@ fetch("phrazes.txt")
 <script src="assets/ytplayer/index.js"></script>
 <script src="assets/dropdown/js/navbar-dropdown.js"></script>
 <script src="assets/theme/js/script.js"></script>
+
+</body>
+</html>
+
+<!-- ▲▲▲ КОНЕЦ ТВОЕГО ФАЙЛА ▲▲▲ -->
+
+  </div>
 
 </body>
 </html>
