@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тайны Влечения | Подготовка к вебинару</title>
+    <title>Основы женской сексуальности | Личный гид</title>
     <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Иконки -->
@@ -36,7 +36,6 @@
             color: var(--color-text);
             background: linear-gradient(135deg, #fdf2f8 0%, #f8d7e6 100%);
             min-height: 100vh;
-            padding: 1rem;
         }
 
         h1, h2, h3, h4 {
@@ -94,6 +93,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .btn {
@@ -154,15 +154,16 @@
             align-items: center;
             justify-content: center;
             min-height: 95vh;
-            padding: 3rem 1rem;
+            padding: 2rem 0;
         }
 
         .content-wrapper {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 4rem;
+            gap: 3rem;
             max-width: 1100px;
+            width: 100%;
         }
 
         .text-content {
@@ -269,7 +270,7 @@
             background-color: rgba(255, 245, 250, 0.8);
             border-radius: var(--border-radius);
             padding: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             border-left: 4px solid var(--color-accent);
         }
 
@@ -281,6 +282,7 @@
             padding: 0.5rem 0;
             padding-left: 2rem;
             position: relative;
+            line-height: 1.5;
         }
 
         .bonus-list li:before {
@@ -291,12 +293,99 @@
             font-weight: bold;
         }
 
+        /* Проблемы */
+        .problems {
+            background-color: rgba(255, 245, 250, 0.9);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .problem-list li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-list li:before {
+            content: '•';
+            position: absolute;
+            left: 1rem;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+        }
+
+        /* Дополнительные стили */
+        .highlight {
+            color: var(--color-secondary);
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .guarantee {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+        }
+
+        .guarantee i {
+            color: var(--color-secondary);
+            margin-right: 0.7rem;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .separator:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+        }
+
+        .separator span {
+            background: white;
+            padding: 0 1rem;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
         /* Таймер обратного отсчета */
         .countdown-timer {
             background: linear-gradient(135deg, rgba(214, 51, 132, 0.1) 0%, rgba(255, 107, 157, 0.1) 100%);
             border-radius: var(--border-radius);
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             text-align: center;
             border: 2px solid var(--color-secondary);
             animation: pulse 2s infinite;
@@ -331,6 +420,16 @@
             background: rgba(220, 53, 69, 0.1);
             border-radius: var(--border-radius);
             animation: blink 1s infinite alternate;
+            text-align: center;
+        }
+
+        .button-expired {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         @keyframes blink {
@@ -338,74 +437,88 @@
             to { opacity: 0.7; }
         }
 
-        /* Дополнительные стили */
-        .highlight {
-            color: var(--color-secondary);
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-        }
-
-        .guarantee {
-            display: inline-flex;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 0.7rem 1.2rem;
-            border-radius: 50px;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .guarantee i {
-            color: var(--color-secondary);
-            margin-right: 0.7rem;
-        }
-
-        .separator {
-            text-align: center;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .separator:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
-        }
-
-        .separator span {
-            background: white;
-            padding: 0 1rem;
-            color: var(--color-text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Адаптивность */
+        /* Адаптивность для МОБИЛЬНЫХ устройств */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+            body {
+                padding: 0;
             }
             
-            h2 {
-                font-size: 1.8rem;
+            .container {
+                padding: 0 0.8rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .main-section {
+                padding: 1.5rem 0;
+                min-height: auto;
+                align-items: flex-start;
             }
             
             .content-wrapper {
                 flex-direction: column;
-                gap: 2.5rem;
+                gap: 2rem;
+                width: 100%;
+            }
+            
+            .text-content, .form-container {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+            
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
             }
             
             .lead-form {
-                padding: 2rem;
+                padding: 1.5rem;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+            
+            .problems, .bonuses, .countdown-timer {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            .problem-list li, .bonus-list li {
+                padding-left: 2rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+            
+            .problem-list li:before {
+                left: 0.5rem;
+            }
+            
+            .bonus-list li:before {
+                left: 0.5rem;
             }
             
             .qr-placeholder {
@@ -413,8 +526,89 @@
                 height: 180px;
             }
             
+            .instructions {
+                padding: 1.2rem;
+            }
+            
+            .bot-info {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .bot-avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .guarantee {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+                text-align: center;
+                justify-content: center;
+                line-height: 1.4;
+            }
+            
+            .guarantee i {
+                margin-right: 0.5rem;
+            }
+            
             .timer-display {
                 font-size: 1.8rem;
+            }
+        }
+
+        /* Адаптивность для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.6rem;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .lead-form {
+                padding: 1.2rem;
+            }
+            
+            .btn {
+                padding: 0.9rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            
+            .qr-placeholder {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .bonus-list li, .problem-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Адаптивность для планшетов */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .content-wrapper {
+                gap: 2.5rem;
+            }
+            
+            .lead-form {
+                padding: 2rem;
             }
         }
 
@@ -444,55 +638,67 @@
         <section class="main-section">
             <div class="content-wrapper fade-in">
                 <div class="text-content">
-                    <h1>Бесплатный гид для подготовки к вебинару <span class="highlight">«Анатомия Любви»</span></h1>
+                    <h1>Откройте <span class="highlight">секреты своего тела</span> и научитесь получать настоящее удовольствие</h1>
                     
-                    <p class="subtitle">Получите 3 упражнения, которые помогут вам максимально эффективно использовать время на вебинаре и начать применять знания сразу после эфира.</p>
+                    <p class="subtitle">Бесплатное руководство по женской сексуальности: от понимания себя до гармонии в близости</p>
                     
-                    <!-- Таймер обратного отсчета ПЕРЕМЕЩЕН СЮДА -->
+                    <!-- Таймер обратного отсчета -->
                     <div class="countdown-timer">
-                        <div class="timer-title">⏳ Успейте получить PDF-гид!</div>
+                        <div class="timer-title">⏳ Успейте получить PDF-руководство!</div>
                         <div class="timer-display" id="countdown">
                             03:00:000
                         </div>
                         <div class="timer-unit">минуты:секунды:миллисекунды</div>
                     </div>
                     
+                    <div class="problems">
+                        <h3><i class="fas fa-heart-crack"></i> Вам знакомы эти ощущения?</h3>
+                        <ul class="problem-list">
+                            <li>Стесняетесь своего тела и не знаете, как его принимать</li>
+                            <li>Не понимаете, что вам нравится в близости, а что нет</li>
+                            <li>Трудно расслабиться и получать удовольствие от секса</li>
+                            <li>Чувствуете вину или стыд за свои сексуальные желания</li>
+                            <li>Хотите стать увереннее, но не знаете, с чего начать</li>
+                        </ul>
+                    </div>
+                    
                     <div class="bonuses">
-                        <h3><i class="fas fa-gift"></i> Что внутри гида:</h3>
+                        <h3><i class="fas fa-gift"></i> В вашем руководстве:</h3>
                         <ul class="bonus-list">
-                            <li><strong>Упражнение «Мой эмоциональный компас»</strong> – определите, что вы на самом деле хотите от отношений</li>
-                            <li><strong>Чек-лист «5 шагов к раскрепощению»</strong> – практики для снятия внутренних блоков до вебинара</li>
-                            <li><strong>Техника «Диалог с телом»</strong> – научитесь слышать свои истинные желания</li>
-                            <li><strong>Бонус:</strong> список ключевых вопросов, которые стоит задать себе перед вебинаром</li>
+                            <li><strong>Карта тела:</strong> научитесь понимать сигналы своего организма</li>
+                            <li><strong>Медитация принятия:</strong> техника для снятия стыда и напряжения</li>
+                            <li><strong>Дневник желаний:</strong> как определить, что вам действительно нравится</li>
+                            <li><strong>Практика "Диалог с собой":</strong> упражнение для самопознания и гармонии</li>
+                            <li><strong>Бонус:</strong> 5 шагов к сексуальной уверенности</li>
                         </ul>
                     </div>
                     
                     <div class="guarantee">
                         <i class="fas fa-shield-alt"></i>
-                        <span>Бот не рассылает спам. Вы получите только полезные материалы.</span>
+                        <span>Научно обоснованные методики. Анонимно и конфиденциально.</span>
                     </div>
                 </div>
                 
                 <div class="form-container fade-in">
                     <div class="lead-form">
                         <div class="form-header">
-                            <i class="fab fa-telegram form-icon telegram-icon"></i>
-                            <h2>Получите PDF-гид в Telegram</h2>
-                            <p>Подключитесь к боту, чтобы мгновенно получить материалы</p>
+                            <i class="fas fa-book-medical form-icon"></i>
+                            <h2>Руководство по женской сексуальности</h2>
+                            <p>PDF-гид с практиками для самопознания и гармонии</p>
                         </div>
                         
                         <div class="instructions">
-                            <h3><i class="fas fa-list-ol"></i> Как получить гид:</h3>
+                            <h3><i class="fas fa-list-ol"></i> Как получить руководство:</h3>
                             <ol>
-                                <li>Нажмите кнопку "Перейти в Telegram-бот" ниже</li>
-                                <li>Запустите бота, нажав кнопку "Start"</li>
-                                <li>Получите PDF-гид и дополнительные материалы</li>
-                                <li>Бот также напомнит вам о вебинаре</li>
+                                <li>Нажмите кнопку для перехода в Telegram-бот</li>
+                                <li>Запустите бота командой /start</li>
+                                <li>Сразу получите PDF-руководство</li>
+                                <li>Ежедневно - полезные практики и советы</li>
                             </ol>
                         </div>
                         
-                        <a href="https://t.me/TayniVlecheniaBot" target="_blank" class="btn btn-telegram pulse" style="width: 100%;">
-                            <i class="fab fa-telegram"></i> Перейти в Telegram-бота
+                        <a href="https://t.me/TayniVlecheniaBot" target="_blank" class="btn btn-telegram pulse" id="telegram-button" style="width: 100%;">
+                            <i class="fas fa-download"></i> Получить руководство бесплатно
                         </a>
                         
                         <div class="separator">
@@ -522,7 +728,7 @@
                         </div>
                         
                         <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #dc3545; font-weight: 600;">
-                            <i class="fas fa-exclamation-triangle"></i> PDF-гид доступен только в течение 3 минут!
+                            <i class="fas fa-exclamation-triangle"></i> PDF-руководство доступно только в течение 3 минут!
                         </p>
                     </div>
                 </div>
@@ -536,17 +742,28 @@
             let totalMilliseconds = 3 * 60 * 1000; // 3 минуты в миллисекундах
             const countdownElement = document.getElementById('countdown');
             const timerContainer = document.querySelector('.countdown-timer');
+            const telegramButton = document.getElementById('telegram-button');
             
             function updateTimer() {
                 if (totalMilliseconds <= 0) {
+                    // Таймер истек
                     countdownElement.innerHTML = "00:00:000";
                     countdownElement.style.color = "#dc3545";
+                    
+                    // Показываем сообщение об окончании времени
                     timerContainer.innerHTML = `
                         <div class="timer-expired">
                             <i class="fas fa-clock"></i> Время истекло!<br>
-                            <small>Для получения PDF-гида напишите боту</small>
+                            <small>Руководство больше недоступно</small>
                         </div>
                     `;
+                    
+                    // Скрываем кнопку Telegram
+                    if (telegramButton) {
+                        telegramButton.classList.add('button-expired');
+                        telegramButton.style.display = 'none';
+                    }
+                    
                     return;
                 }
                 
@@ -577,7 +794,7 @@
         }
 
         // Обработка клика по кнопке Telegram
-        document.querySelector('.btn-telegram').addEventListener('click', function(e) {
+        document.getElementById('telegram-button').addEventListener('click', function(e) {
             // Логика отслеживания перехода в бота
             const button = this;
             const originalText = button.innerHTML;
