@@ -287,6 +287,7 @@
             line-height: 1.7;
         }
 
+        /* QR-код - ПО УМОЛЧАНИЮ ВИДЕН */
         .qr-code {
             text-align: center;
             margin: 2.5rem 0;
@@ -294,6 +295,7 @@
             background: white;
             border-radius: var(--border-radius);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            display: block; /* По умолчанию показываем */
         }
 
         .qr-placeholder {
@@ -601,9 +603,14 @@
                 font-size: 0.9rem;
             }
             
-            .qr-placeholder {
-                width: 200px;
-                height: 200px;
+            /* ОБНОВЛЕНО: Скрываем QR-код на мобильных */
+            .qr-code {
+                display: none !important;
+            }
+            
+            /* ОБНОВЛЕНО: Скрываем разделитель "или отсканируйте QR-код" на мобильных */
+            .separator {
+                display: none !important;
             }
             
             .instructions {
@@ -615,6 +622,7 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 12px;
+                margin-top: 1.5rem;
             }
             
             .bot-avatar {
@@ -635,6 +643,28 @@
             
             .guarantee i {
                 margin-right: 0.6rem;
+            }
+        }
+
+        /* ПЛАНШЕТЫ (768px - 1024px) - показываем QR-код */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .qr-code {
+                display: block !important;
+            }
+            
+            .separator {
+                display: block !important;
+            }
+        }
+
+        /* ДЕСКТОПЫ (1025px+) - показываем QR-код */
+        @media (min-width: 1025px) {
+            .qr-code {
+                display: block !important;
+            }
+            
+            .separator {
+                display: block !important;
             }
         }
 
@@ -685,11 +715,6 @@
                 font-size: 0.85rem;
             }
             
-            .qr-placeholder {
-                width: 180px;
-                height: 180px;
-            }
-            
             .bonus-list li, .problem-list li {
                 font-size: 0.95rem;
             }
@@ -726,13 +751,13 @@
                     
                     <p class="subtitle">Бесплатное руководство по женской сексуальности: от понимания себя до гармонии в близости</p>
                     
-                    <!-- ТАЙМЕР С ОБНОВЛЕННЫМ ШРИФТОМ -->
+                    <!-- ТАЙМЕР С ОБНОВЛЕННЫМ ШРИФТОМ И УКОРОЧЕННЫМИ МИЛЛИСЕКУНДАМИ -->
                     <div class="countdown-timer">
                         <div class="timer-title">⏳ Успейте получить PDF-руководство!</div>
                         <div class="timer-display" id="countdown">
-                            03:00:000
+                            03:00:00
                         </div>
-                        <div class="timer-unit">минуты:секунды:миллисекунды</div>
+                        <div class="timer-unit">минуты:секунды:сотые</div>
                     </div>
                     
                     <!-- КАТЕГОРИИ С УЛУЧШЕННОЙ АДАПТИВНОСТЬЮ -->
@@ -786,6 +811,7 @@
                             <i class="fas fa-download"></i> Получить руководство бесплатно
                         </a>
                         
+                        <!-- РАЗДЕЛИТЕЛЬ И QR-КОД - БУДУТ СКРЫТЫ НА МОБИЛЬНЫХ -->
                         <div class="separator">
                             <span>или отсканируйте QR-код</span>
                         </div>
@@ -832,7 +858,7 @@
             function updateTimer() {
                 if (totalMilliseconds <= 0) {
                     // Таймер истек
-                    countdownElement.innerHTML = "00:00:000";
+                    countdownElement.innerHTML = "00:00:00";
                     countdownElement.style.color = "#dc3545";
                     
                     // Показываем сообщение об окончании времени
@@ -854,14 +880,14 @@
                 
                 const minutes = Math.floor(totalMilliseconds / 60000);
                 const seconds = Math.floor((totalMilliseconds % 60000) / 1000);
-                const milliseconds = totalMilliseconds % 1000;
+                const centiseconds = Math.floor((totalMilliseconds % 1000) / 10); // Только 2 цифры (сотые)
                 
                 // Форматирование с ведущими нулями
                 const formattedMinutes = minutes.toString().padStart(2, '0');
                 const formattedSeconds = seconds.toString().padStart(2, '0');
-                const formattedMilliseconds = milliseconds.toString().padStart(3, '0');
+                const formattedCentiseconds = centiseconds.toString().padStart(2, '0');
                 
-                countdownElement.textContent = `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
+                countdownElement.textContent = `${formattedMinutes}:${formattedSeconds}:${formattedCentiseconds}`;
                 
                 // Изменение цвета при малом времени
                 if (minutes === 0 && seconds < 30) {
