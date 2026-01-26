@@ -213,6 +213,18 @@
             box-shadow: 0 15px 35px rgba(0, 136, 204, 0.35);
         }
 
+        /* Кнопка после блока проблем */
+        .btn-problems {
+            background: linear-gradient(135deg, #b0568c, #e48fb4);
+            box-shadow: 0 8px 25px rgba(176, 86, 140, 0.25);
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        .btn-problems:hover {
+            box-shadow: 0 15px 35px rgba(176, 86, 140, 0.35);
+        }
+
         /* Главная секция */
         .main-section {
             display: flex;
@@ -571,6 +583,13 @@
                 width: 100%;
             }
             
+            .btn-problems {
+                padding: 1rem 1.5rem;
+                font-size: 1.05rem;
+                width: 100%;
+                margin-top: 1.2rem;
+            }
+            
             /* ОБНОВЛЕНО: Улучшено отображение категорий */
             .problems, .bonuses, .countdown-timer {
                 padding: 1.8rem;
@@ -694,6 +713,11 @@
                 font-size: 1rem;
             }
             
+            .btn-problems {
+                padding: 0.9rem 1.2rem;
+                font-size: 1rem;
+            }
+            
             /* ОБНОВЛЕНО: Еще больше оптимизации для маленьких экранов */
             .problems, .bonuses, .countdown-timer {
                 padding: 1.5rem;
@@ -770,6 +794,11 @@
                             <li>Чувствуете вину или стыд за свои сексуальные желания</li>
                             <li>Хотите стать увереннее, но не знаете, с чего начать</li>
                         </ul>
+                        
+                        <!-- ВТОРАЯ КНОПКА ПОСЛЕ БЛОКА ПРОБЛЕМ -->
+                        <a href="https://t.me/TayniVlecheniaBot" target="_blank" class="btn btn-problems pulse" id="telegram-button-problems">
+                            <i class="fas fa-heart"></i> Начать путь к гармонии
+                        </a>
                     </div>
                     
                     <div class="bonuses">
@@ -807,7 +836,8 @@
                             </ol>
                         </div>
                         
-                        <a href="https://t.me/TayniVlecheniaBot" target="_blank" class="btn btn-telegram pulse" id="telegram-button" style="width: 100%;">
+                        <!-- ПЕРВАЯ КНОПКА (ОРИГИНАЛЬНАЯ) -->
+                        <a href="https://t.me/TayniVlecheniaBot" target="_blank" class="btn btn-telegram pulse" id="telegram-button-main" style="width: 100%;">
                             <i class="fas fa-download"></i> Получить руководство бесплатно
                         </a>
                         
@@ -853,7 +883,8 @@
             let totalMilliseconds = 3 * 60 * 1000; // 3 минуты в миллисекундах
             const countdownElement = document.getElementById('countdown');
             const timerContainer = document.querySelector('.countdown-timer');
-            const telegramButton = document.getElementById('telegram-button');
+            const telegramButtonMain = document.getElementById('telegram-button-main');
+            const telegramButtonProblems = document.getElementById('telegram-button-problems');
             
             function updateTimer() {
                 if (totalMilliseconds <= 0) {
@@ -869,10 +900,15 @@
                         </div>
                     `;
                     
-                    // Скрываем кнопку Telegram
-                    if (telegramButton) {
-                        telegramButton.classList.add('button-expired');
-                        telegramButton.style.display = 'none';
+                    // Скрываем обе кнопки Telegram
+                    if (telegramButtonMain) {
+                        telegramButtonMain.classList.add('button-expired');
+                        telegramButtonMain.style.display = 'none';
+                    }
+                    
+                    if (telegramButtonProblems) {
+                        telegramButtonProblems.classList.add('button-expired');
+                        telegramButtonProblems.style.display = 'none';
                     }
                     
                     return;
@@ -904,8 +940,28 @@
             updateTimer();
         }
 
-        // Обработка клика по кнопке Telegram
-        document.getElementById('telegram-button').addEventListener('click', function(e) {
+        // Обработка клика по первой кнопке Telegram (в форме)
+        document.getElementById('telegram-button-main').addEventListener('click', function(e) {
+            // Логика отслеживания перехода в бота
+            const button = this;
+            const originalText = button.innerHTML;
+            
+            // Анимация загрузки
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Открываем Telegram...';
+            button.disabled = true;
+            
+            // В реальном проекте здесь можно добавить analytics-событие
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Реальная ссылка на бота
+                window.open('https://t.me/TayniVlecheniaBot', '_blank');
+            }, 1000);
+        });
+        
+        // Обработка клика по второй кнопке Telegram (после проблем)
+        document.getElementById('telegram-button-problems').addEventListener('click', function(e) {
             // Логика отслеживания перехода в бота
             const button = this;
             const originalText = button.innerHTML;
