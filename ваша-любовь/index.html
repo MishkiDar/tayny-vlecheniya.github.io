@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Основы женской сексуальности | Личный гид</title>
-    <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Тайны Влечения | Основы женской сексуальности | Личный гид</title>
+    <!-- Элегантные шрифты: Playfair Display + Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --color-primary: #8a2d8a;
-            --color-secondary: #d63384;
-            --color-accent: #ff6b9d;
-            --color-light: #f8d7e6;
-            --color-dark: #4a1942;
+            --color-secondary: #b0568c;
+            --color-accent: #e48fb4;
+            --color-light: #f9f0f5;
+            --color-dark: #3a1a36;
+            --color-dark-gold: #8b6f47;
             --color-text: #333333;
-            --color-text-light: #5a5a5a;
+            --color-text-light: #666666;
             --color-card: #ffffff;
             --color-telegram: #0088cc;
-            --border-radius: 16px;
-            --shadow: 0 10px 30px rgba(138, 45, 138, 0.15);
-            --transition: all 0.3s ease;
+            --border-radius: 20px;
+            --shadow: 0 15px 40px rgba(138, 45, 138, 0.08);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            
+            /* Шрифты */
+            --font-heading-main: 'Playfair Display', serif;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Lora', serif;
         }
 
         * {
@@ -31,31 +37,71 @@
         }
 
         body {
-            font-family: 'Jost', sans-serif;
-            line-height: 1.7;
+            font-family: var(--font-body);
+            line-height: 1.9;
             color: var(--color-text);
-            background: linear-gradient(135deg, #fdf2f8 0%, #f8d7e6 100%);
+            background: linear-gradient(135deg, #fcf7fa 0%, #f9f0f5 100%);
             min-height: 100vh;
+            font-weight: 400;
+            letter-spacing: 0.02em;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
+        /* СОЛИДНЫЙ ГЛАВНЫЙ ЗАГОЛОВОК */
         h1 {
-            font-size: 2.8rem;
+            font-family: var(--font-heading-main);
+            font-weight: 700;
+            font-size: 3.5rem;
             color: var(--color-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.2;
+            text-align: center;
+            position: relative;
+            padding-bottom: 2rem;
+            letter-spacing: 0.01em;
+            text-transform: none;
+        }
+
+        h1 .highlight {
+            color: var(--color-dark-gold);
+            font-weight: 700;
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+            padding: 0 5px;
+        }
+
+        h1 .highlight:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--color-dark-gold), transparent);
+            opacity: 0.5;
+        }
+
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(139, 111, 71, 0.7), 
+                transparent);
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
             color: var(--color-primary);
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         h2:after {
@@ -63,21 +109,39 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
-            height: 3px;
+            width: 100px;
+            height: 2px;
             background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
             border-radius: 2px;
         }
 
         h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--color-secondary);
+            font-family: var(--font-heading);
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
             color: var(--color-text-light);
+            line-height: 1.9;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            text-align: center;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.85;
         }
 
         a {
@@ -93,34 +157,35 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 1.1rem 2.5rem;
-            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+            gap: 12px;
+            padding: 1.3rem 3rem;
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
             color: white;
             border: none;
             border-radius: var(--border-radius);
-            font-family: 'Jost', sans-serif;
+            font-family: var(--font-body);
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 6px 20px rgba(214, 51, 132, 0.3);
+            box-shadow: 0 8px 25px rgba(182, 86, 140, 0.25);
             text-align: center;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            letter-spacing: 0.03em;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(214, 51, 132, 0.4);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(182, 86, 140, 0.35);
         }
 
         .btn:before {
@@ -131,7 +196,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-            transition: left 0.4s ease;
+            transition: left 0.6s ease;
             z-index: -1;
         }
 
@@ -140,12 +205,12 @@
         }
 
         .btn-telegram {
-            background: linear-gradient(to right, var(--color-telegram), #2AABEE);
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+            background: linear-gradient(135deg, var(--color-telegram), #2AABEE);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.25);
         }
 
         .btn-telegram:hover {
-            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 136, 204, 0.35);
         }
 
         /* Главная секция */
@@ -153,15 +218,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 95vh;
-            padding: 2rem 0;
+            min-height: 100vh;
+            padding: 4rem 0;
         }
 
         .content-wrapper {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
+            align-items: flex-start;
+            gap: 5rem;
             max-width: 1100px;
             width: 100%;
         }
@@ -180,22 +245,22 @@
         .lead-form {
             background-color: var(--color-card);
             border-radius: var(--border-radius);
-            padding: 2.5rem;
+            padding: 3rem;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(138, 45, 138, 0.1);
+            border: 1px solid rgba(138, 45, 138, 0.05);
             position: relative;
             overflow: hidden;
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .form-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--color-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: block;
         }
 
@@ -204,73 +269,75 @@
         }
 
         .instructions {
-            background-color: rgba(0, 136, 204, 0.05);
+            background-color: rgba(176, 86, 140, 0.03);
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--color-telegram);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 3px solid var(--color-telegram);
         }
 
         .instructions ol {
-            padding-left: 1.5rem;
-            margin: 1rem 0;
+            padding-left: 1.8rem;
+            margin: 1.2rem 0;
         }
 
         .instructions li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             color: var(--color-text-light);
+            line-height: 1.7;
         }
 
         .qr-code {
             text-align: center;
-            margin: 2rem 0;
-            padding: 1rem;
+            margin: 2.5rem 0;
+            padding: 1.5rem;
             background: white;
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
         }
 
         .qr-placeholder {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             margin: 0 auto;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            border-radius: 12px;
+            background: linear-gradient(45deg, #f5f5f5, #eaeaea);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--color-text-light);
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .bot-info {
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: rgba(0, 136, 204, 0.1);
-            padding: 1rem 1.5rem;
+            gap: 18px;
+            background: rgba(0, 136, 204, 0.05);
+            padding: 1.5rem;
             border-radius: var(--border-radius);
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .bot-avatar {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--color-telegram), #2AABEE);
+            background: linear-gradient(135deg, var(--color-telegram), #2AABEE);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.2);
         }
 
         /* Бонусы */
         .bonuses {
-            background-color: rgba(255, 245, 250, 0.8);
+            background-color: rgba(255, 245, 250, 0.7);
             border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-top: 2rem;
+            padding: 2.5rem;
+            margin-top: 2.5rem;
             border-left: 4px solid var(--color-accent);
         }
 
@@ -279,40 +346,41 @@
         }
 
         .bonus-list li {
-            padding: 0.5rem 0;
-            padding-left: 2rem;
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
             position: relative;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .bonus-list li:before {
-            content: '✓';
+            content: '✦';
             position: absolute;
             left: 0;
             color: var(--color-secondary);
-            font-weight: bold;
+            font-weight: normal;
+            font-size: 1.2rem;
         }
 
         /* Проблемы */
         .problems {
-            background-color: rgba(255, 245, 250, 0.9);
+            background-color: rgba(255, 245, 250, 0.7);
             border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(214, 51, 132, 0.1);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border: 1px solid rgba(176, 86, 140, 0.1);
         }
 
         .problem-list {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .problem-list li {
-            padding: 0.8rem 0;
-            padding-left: 2.5rem;
+            padding: 1rem 0;
+            padding-left: 3rem;
             position: relative;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            line-height: 1.5;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            line-height: 1.6;
         }
 
         .problem-list li:last-child {
@@ -320,46 +388,35 @@
         }
 
         .problem-list li:before {
-            content: '•';
+            content: '—';
             position: absolute;
-            left: 1rem;
+            left: 1.5rem;
             color: var(--color-accent);
             font-size: 1.5rem;
         }
 
         /* Дополнительные стили */
-        .highlight {
-            color: var(--color-secondary);
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
         .guarantee {
             display: inline-flex;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 0.7rem 1.2rem;
+            padding: 1rem 1.8rem;
             border-radius: 50px;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             flex-wrap: wrap;
+            border: 1px solid rgba(176, 86, 140, 0.1);
         }
 
         .guarantee i {
             color: var(--color-secondary);
-            margin-right: 0.7rem;
+            margin-right: 0.8rem;
         }
 
         .separator {
             text-align: center;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             position: relative;
         }
 
@@ -375,52 +432,60 @@
 
         .separator span {
             background: white;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
             color: var(--color-text-light);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
         }
 
-        /* Таймер обратного отсчета */
+        /* ТАЙМЕР - ОБНОВЛЕННЫЙ ШРИФТ */
         .countdown-timer {
-            background: linear-gradient(135deg, rgba(214, 51, 132, 0.1) 0%, rgba(255, 107, 157, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(176, 86, 140, 0.08) 0%, rgba(228, 143, 180, 0.08) 100%);
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin: 2rem 0;
+            padding: 2rem;
+            margin: 3rem 0;
             text-align: center;
-            border: 2px solid var(--color-secondary);
-            animation: pulse 2s infinite;
+            border: 1px solid rgba(176, 86, 140, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         .timer-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--color-secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-weight: 600;
+            letter-spacing: 0.03em;
         }
 
+        /* ОБНОВЛЕННЫЙ ШРИФТ: Тот же, что в подзаголовке (Lora) */
         .timer-display {
-            font-family: 'Jost', monospace;
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-family: 'Lora', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
             color: var(--color-dark);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .timer-unit {
-            font-size: 0.9rem;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
             color: var(--color-text-light);
             display: block;
-            margin-top: 0.3rem;
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+            font-weight: 400;
         }
 
         .timer-expired {
             color: #dc3545;
             font-weight: 600;
-            padding: 1rem;
-            background: rgba(220, 53, 69, 0.1);
+            padding: 1.5rem;
+            background: rgba(220, 53, 69, 0.05);
             border-radius: var(--border-radius);
-            animation: blink 1s infinite alternate;
+            animation: blink 1.5s infinite alternate;
             text-align: center;
+            font-size: 1.3rem;
         }
 
         .button-expired {
@@ -429,7 +494,7 @@
             padding: 0;
             margin: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         @keyframes blink {
@@ -437,27 +502,27 @@
             to { opacity: 0.7; }
         }
 
-        /* Адаптивность для МОБИЛЬНЫХ устройств */
+        /* Адаптивность для МОБИЛЬНЫХ устройств - ОБНОВЛЕНО */
         @media (max-width: 768px) {
             body {
                 padding: 0;
             }
             
             .container {
-                padding: 0 0.8rem;
+                padding: 0 1.2rem;
                 width: 100%;
                 max-width: 100%;
             }
             
             .main-section {
-                padding: 1.5rem 0;
+                padding: 2.5rem 0;
                 min-height: auto;
                 align-items: flex-start;
             }
             
             .content-wrapper {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 3rem;
                 width: 100%;
             }
             
@@ -467,9 +532,119 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 line-height: 1.2;
-                margin-bottom: 1rem;
+                margin-bottom: 1.2rem;
+                padding-bottom: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 1.25rem;
+                line-height: 1.5;
+                margin-bottom: 2rem;
+            }
+            
+            p {
+                font-size: 1.05rem;
+                line-height: 1.8;
+            }
+            
+            .lead-form {
+                padding: 2rem;
+                margin: 0;
+                width: 100%;
+            }
+            
+            .btn {
+                padding: 1.1rem 1.8rem;
+                font-size: 1.05rem;
+                width: 100%;
+            }
+            
+            /* ОБНОВЛЕНО: Улучшено отображение категорий */
+            .problems, .bonuses, .countdown-timer {
+                padding: 1.8rem;
+                margin: 1.8rem 0;
+            }
+            
+            .problem-list li, .bonus-list li {
+                padding-left: 2rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                padding-top: 0.7rem;
+                padding-bottom: 0.7rem;
+            }
+            
+            .problem-list li:before {
+                left: 0.8rem;
+            }
+            
+            .bonus-list li:before {
+                left: 0.5rem;
+            }
+            
+            /* ОБНОВЛЕНО: Таймер на мобильных */
+            .timer-display {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .timer-unit {
+                font-size: 0.9rem;
+            }
+            
+            .qr-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .instructions {
+                padding: 1.5rem;
+            }
+            
+            .bot-info {
+                padding: 1.2rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .bot-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .guarantee {
+                padding: 0.9rem 1.2rem;
+                font-size: 0.9rem;
+                text-align: center;
+                justify-content: center;
+                line-height: 1.5;
+                width: 100%;
+                margin-top: 1.5rem;
+            }
+            
+            .guarantee i {
+                margin-right: 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.9rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
             }
             
             h2 {
@@ -480,45 +655,34 @@
                 font-size: 1.4rem;
             }
             
-            .subtitle {
-                font-size: 1.1rem;
-                line-height: 1.4;
-            }
-            
-            p {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-            
             .lead-form {
-                padding: 1.5rem;
-                margin: 0;
-                width: 100%;
+                padding: 1.8rem;
             }
             
             .btn {
                 padding: 1rem 1.5rem;
                 font-size: 1rem;
-                width: 100%;
             }
             
+            /* ОБНОВЛЕНО: Еще больше оптимизации для маленьких экранов */
             .problems, .bonuses, .countdown-timer {
                 padding: 1.5rem;
                 margin: 1.5rem 0;
             }
             
             .problem-list li, .bonus-list li {
-                padding-left: 2rem;
+                padding-left: 1.8rem;
                 font-size: 0.95rem;
                 line-height: 1.4;
             }
             
-            .problem-list li:before {
-                left: 0.5rem;
+            .timer-display {
+                font-size: 1.9rem;
+                letter-spacing: 1px;
             }
             
-            .bonus-list li:before {
-                left: 0.5rem;
+            .timer-unit {
+                font-size: 0.85rem;
             }
             
             .qr-placeholder {
@@ -526,110 +690,29 @@
                 height: 180px;
             }
             
-            .instructions {
-                padding: 1.2rem;
-            }
-            
-            .bot-info {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-            
-            .bot-avatar {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .guarantee {
-                padding: 0.8rem 1rem;
-                font-size: 0.85rem;
-                text-align: center;
-                justify-content: center;
-                line-height: 1.4;
-            }
-            
-            .guarantee i {
-                margin-right: 0.5rem;
-            }
-            
-            .timer-display {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Адаптивность для очень маленьких экранов */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 0.6rem;
-            }
-            
-            h1 {
-                font-size: 1.7rem;
-            }
-            
-            h2 {
-                font-size: 1.4rem;
-            }
-            
-            h3 {
-                font-size: 1.2rem;
-            }
-            
-            .lead-form {
-                padding: 1.2rem;
-            }
-            
-            .btn {
-                padding: 0.9rem 1.2rem;
-                font-size: 0.95rem;
-            }
-            
-            .qr-placeholder {
-                width: 160px;
-                height: 160px;
-            }
-            
             .bonus-list li, .problem-list li {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Адаптивность для планшетов */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                padding: 0 2rem;
-            }
-            
-            .content-wrapper {
-                gap: 2.5rem;
-            }
-            
-            .lead-form {
-                padding: 2rem;
+                font-size: 0.95rem;
             }
         }
 
         /* Анимации */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in {
-            animation: fadeIn 0.8s ease forwards;
+            animation: fadeIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
         }
 
         .pulse {
-            animation: pulse 2s infinite;
+            animation: pulse 2.5s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(214, 51, 132, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(214, 51, 132, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(214, 51, 132, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(176, 86, 140, 0.3); }
+            70% { box-shadow: 0 0 0 18px rgba(176, 86, 140, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(176, 86, 140, 0); }
         }
     </style>
 </head>
@@ -638,11 +721,12 @@
         <section class="main-section">
             <div class="content-wrapper fade-in">
                 <div class="text-content">
+                    <!-- СОЛИДНЫЙ ГЛАВНЫЙ ЗАГОЛОВОК -->
                     <h1>Откройте <span class="highlight">секреты своего тела</span> и научитесь получать настоящее удовольствие</h1>
                     
                     <p class="subtitle">Бесплатное руководство по женской сексуальности: от понимания себя до гармонии в близости</p>
                     
-                    <!-- Таймер обратного отсчета -->
+                    <!-- ТАЙМЕР С ОБНОВЛЕННЫМ ШРИФТОМ -->
                     <div class="countdown-timer">
                         <div class="timer-title">⏳ Успейте получить PDF-руководство!</div>
                         <div class="timer-display" id="countdown">
@@ -651,6 +735,7 @@
                         <div class="timer-unit">минуты:секунды:миллисекунды</div>
                     </div>
                     
+                    <!-- КАТЕГОРИИ С УЛУЧШЕННОЙ АДАПТИВНОСТЬЮ -->
                     <div class="problems">
                         <h3><i class="fas fa-heart-crack"></i> Вам знакомы эти ощущения?</h3>
                         <ul class="problem-list">
@@ -708,11 +793,11 @@
                         <div class="qr-code">
                             <div class="qr-placeholder">
                                 <div>
-                                    <i class="fas fa-qrcode" style="font-size: 2rem; margin-bottom: 10px; color: #999;"></i>
+                                    <i class="fas fa-qrcode" style="font-size: 2.5rem; margin-bottom: 15px; color: #aaa;"></i>
                                     <div>QR-код для бота</div>
                                 </div>
                             </div>
-                            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-light);">
+                            <p style="margin-top: 1.2rem; font-size: 1rem; color: var(--color-text-light);">
                                 Наведите камеру телефона на QR-код
                             </p>
                         </div>
@@ -722,12 +807,12 @@
                                 <i class="fab fa-telegram"></i>
                             </div>
                             <div>
-                                <h4 style="margin-bottom: 0.3rem;">Бот «Тайны Влечения»</h4>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">@TayniVlecheniaBot</p>
+                                <h4 style="margin-bottom: 0.5rem;">Бот «Тайны Влечения»</h4>
+                                <p style="font-size: 1rem; margin-bottom: 0;">@TayniVlecheniaBot</p>
                             </div>
                         </div>
                         
-                        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #dc3545; font-weight: 600;">
+                        <p style="text-align: center; margin-top: 2rem; font-size: 1rem; color: #dc3545; font-weight: 600; letter-spacing: 0.02em;">
                             <i class="fas fa-exclamation-triangle"></i> PDF-руководство доступно только в течение 3 минут!
                         </p>
                     </div>
@@ -816,11 +901,6 @@
         // Запуск таймера при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             startCountdown();
-            
-            // Для реального проекта добавьте сюда:
-            // 1. Реальный QR-код (сгенерированный для ссылки на бота)
-            // 2. Интеграцию с аналитикой (Google Analytics, Yandex.Metrica и т.д.)
-            // 3. Возможность показа разных QR-кодов для разных источников трафика
         });
     </script>
 </body>
