@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секрет женской притягательности | Private College</title>
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #8a2d8a;
+            --color-secondary: #d63384;
+            --color-accent: #ff6b9d;
+            --color-light: #f8d7e6;
+            --color-dark: #4a1942;
+            --color-text: #333333;
+            --color-text-light: #5a5a5a;
+            --color-card: #ffffff;
+            --color-telegram: #0088cc;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(138, 45, 138, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #fdf2f8 0%, #f8d7e6 100%);
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--color-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--color-secondary);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+        }
+
+        a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--color-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 1.1rem 2.5rem;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(214, 51, 132, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(214, 51, 132, 0.4);
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 0;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(to right, var(--color-telegram), #2AABEE);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+        }
+
+        .btn-telegram:hover {
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Главная секция */
+        .main-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 95vh;
+            padding: 3rem 1rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1100px;
+        }
+
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Форма */
+        .lead-form {
+            background-color: var(--color-card);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(138, 45, 138, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-icon {
+            font-size: 3rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .telegram-icon {
+            color: var(--color-telegram);
+        }
+
+        .instructions {
+            background-color: rgba(0, 136, 204, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-telegram);
+        }
+
+        .instructions ol {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.8rem;
+            color: var(--color-text-light);
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        .bot-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 136, 204, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+        }
+
+        .bot-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--color-telegram), #2AABEE);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Бонусы */
+        .bonuses {
+            background-color: rgba(255, 245, 250, 0.8);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .bonus-list {
+            list-style: none;
+        }
+
+        .bonus-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .bonus-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        /* Дополнительные стили */
+        .highlight {
+            color: var(--color-secondary);
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+
+        .guarantee {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .guarantee i {
+            color: var(--color-secondary);
+            margin-right: 0.7rem;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .separator:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+        }
+
+        .separator span {
+            background: white;
+            padding: 0 1rem;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Проблемы */
+        .problems {
+            background-color: rgba(255, 245, 250, 0.9);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .problem-list li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-list li:before {
+            content: '•';
+            position: absolute;
+            left: 1rem;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-wrapper {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            
+            .lead-form {
+                padding: 2rem;
+            }
+            
+            .qr-placeholder {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(214, 51, 132, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(214, 51, 132, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(214, 51, 132, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="main-section">
+            <div class="content-wrapper fade-in">
+                <div class="text-content">
+                    <h1>Узнайте, как стать <span class="highlight">самой желанной</span> женщиной в его жизни</h1>
+                    
+                    <p class="subtitle">Получите бесплатный PDF-гид от Private College, чтобы пробудить страсть, укрепить близость и стать для него единственной</p>
+                    
+                    <div class="problems">
+                        <h3><i class="fas fa-heart-crack"></i> Узнаёте себя?</h3>
+                        <ul class="problem-list">
+                            <li>Отношения стали «соседскими», а страсть и близость угасли</li>
+                            <li>Мужчина смотрит на других женщин или вы подозреваете измену</li>
+                            <li>Трудно расслабиться и получать удовольствие в близости</li>
+                            <li>Хочется встретить достойного мужчину, но не получается</li>
+                            <li>Чувствуете, что перестали быть для него самой желанной</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bonuses">
+                        <h3><i class="fas fa-gift"></i> Что вы получите в PDF-гиде:</h3>
+                        <ul class="bonus-list">
+                            <li><strong>«Эмоциональный компас»</strong> – определите, какие отношения вы хотите на самом деле</li>
+                            <li><strong>Техника «Пробуждение чувств»</strong> – как вернуть остроту ощущений и наслаждение</li>
+                            <li><strong>Практика «Магнит притяжения»</strong> – как стать для него единственной и незабываемой</li>
+                            <li><strong>Бонус:</strong> 3 шага для снятия внутренних блоков, мешающих вашей сексуальности</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Более 60 000 женщин уже изменили свою жизнь с Private College</span>
+                    </div>
+                </div>
+                
+                <div class="form-container fade-in">
+                    <div class="lead-form">
+                        <div class="form-header">
+                            <i class="fab fa-telegram form-icon telegram-icon"></i>
+                            <h2>Получите PDF-гид в Telegram</h2>
+                            <p>3 техники, которые помогут вам стать желаннее уже сегодня</p>
+                        </div>
+                        
+                        <div class="instructions">
+                            <h3><i class="fas fa-list-ol"></i> Как получить гид:</h3>
+                            <ol>
+                                <li>Нажмите кнопку "Получить PDF-гид" ниже</li>
+                                <li>Запустите бота, нажав кнопку "Start"</li>
+                                <li>Получите сразу 3 техники для пробуждения страсти</li>
+                                <li>Бот напомнит о следующих шагах к вашей цели</li>
+                            </ol>
+                        </div>
+                        
+                        <a href="https://t.me/private_college_bot" target="_blank" class="btn btn-telegram pulse" style="width: 100%;">
+                            <i class="fas fa-download"></i> Получить PDF-гид бесплатно
+                        </a>
+                        
+                        <div class="separator">
+                            <span>или отсканируйте QR-код</span>
+                        </div>
+                        
+                        <div class="qr-code">
+                            <div class="qr-placeholder">
+                                <div>
+                                    <i class="fas fa-qrcode" style="font-size: 2rem; margin-bottom: 10px; color: #999;"></i>
+                                    <div>QR-код для бота</div>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-light);">
+                                Наведите камеру телефона на QR-код
+                            </p>
+                        </div>
+                        
+                        <div class="bot-info">
+                            <div class="bot-avatar">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.3rem;">Бот Private College</h4>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">@private_college_bot</p>
+                            </div>
+                        </div>
+                        
+                        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--color-text-light);">
+                            <i class="fas fa-user-graduate"></i> 60 000+ женщин уже с нами
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Ретаргетинг Яндекс.Метрика -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Яндекс.Метрика -->
+
+    <script>
+        // Обработка клика по кнопке Telegram для ретаргетинга
+        document.querySelector('.btn-telegram').addEventListener('click', function(e) {
+            // Отправка события в Яндекс.Метрику
+            if (typeof ym !== 'undefined') {
+                ym(XXXXXX, 'reachGoal', 'telegram_click');
+            }
+            
+            // Отправка события в Google Analytics (если используется)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'telegram_click', {
+                    'event_category': 'lead',
+                    'event_label': 'pdf_guide'
+                });
+            }
+            
+            const button = this;
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Открываем Telegram...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 1000);
+        });
+        
+        // Отслеживание просмотра страницы для ретаргетинга
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (typeof ym !== 'undefined') {
+                    ym(XXXXXX, 'reachGoal', 'page_view_30s');
+                }
+            }, 30000);
+            
+            // Отслеживание скролла для ретаргетинга
+            window.addEventListener('scroll', function() {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                    if (typeof ym !== 'undefined') {
+                        ym(XXXXXX, 'reachGoal', 'page_scroll_bottom');
+                    }
+                }
+            });
+        });
+        
+        // Замените XXXXXX на ваш номер счетчика Яндекс.Метрики
+        // Добавьте ссылку на реального бота: https://t.me/private_college_bot
+        // Сгенерируйте реальный QR-код для ссылки на бота
+    </script>
+</body>
+</html>
