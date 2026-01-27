@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>От поиска одобрения — к внутренней целостности | Личный гид</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105134145', 'ym');
+
+        ym(105134145, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/105134145" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
     <!-- Элегантные шрифты: Playfair Display + Lora -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Иконки -->
@@ -310,17 +324,13 @@
             display: block; /* По умолчанию показываем */
         }
 
-        .qr-placeholder {
+        .qr-code img {
             width: 220px;
             height: 220px;
-            margin: 0 auto;
-            background: linear-gradient(45deg, #f5f5f5, #eaeaea);
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text-light);
-            font-size: 1rem;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .bot-info {
@@ -516,72 +526,6 @@
             to { opacity: 0.7; }
         }
 
-        /* НОВЫЕ СТИЛИ ДЛЯ БЛОКА СТАТЬИ И КЛЮЧЕВИКОВ */
-        .article-section {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            margin-top: 4rem;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(138, 45, 138, 0.05);
-        }
-
-        .article-section h2 {
-            margin-bottom: 2rem;
-            color: var(--color-dark);
-        }
-
-        .article-section h2:after {
-            width: 150px;
-        }
-
-        .article-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--color-text);
-            margin-bottom: 3rem;
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .keywords-block {
-            background-color: rgba(176, 86, 140, 0.03);
-            border-radius: var(--border-radius);
-            padding: 2.5rem;
-            border-left: 4px solid var(--color-secondary);
-        }
-
-        .keywords-title {
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .keywords-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .keyword-tag {
-            background-color: white;
-            border: 1px solid rgba(176, 86, 140, 0.2);
-            border-radius: 50px;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.95rem;
-            color: var(--color-text-light);
-            transition: var(--transition);
-        }
-
-        .keyword-tag:hover {
-            background-color: var(--color-light);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
         /* Адаптивность для МОБИЛЬНЫХ устройств - ОБНОВЛЕНО */
         @media (max-width: 768px) {
             body {
@@ -729,25 +673,6 @@
             .guarantee i {
                 margin-right: 0.6rem;
             }
-            
-            /* Адаптация нового блока со статьей */
-            .article-section {
-                padding: 1.8rem;
-                margin-top: 3rem;
-            }
-            
-            .keywords-block {
-                padding: 1.5rem;
-            }
-            
-            .keywords-title {
-                font-size: 1.3rem;
-            }
-            
-            .keyword-tag {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
         }
 
         /* ПЛАНШЕТЫ (768px - 1024px) - показываем QR-код */
@@ -826,20 +751,6 @@
             
             .bonus-list li, .problem-list li {
                 font-size: 0.95rem;
-            }
-            
-            /* Адаптация нового блока для очень маленьких экранов */
-            .article-section {
-                padding: 1.5rem;
-            }
-            
-            .keywords-container {
-                gap: 8px;
-            }
-            
-            .keyword-tag {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
             }
         }
 
@@ -946,12 +857,7 @@
                         </div>
                         
                         <div class="qr-code">
-                            <div class="qr-placeholder">
-                                <div>
-                                    <i class="fas fa-qrcode" style="font-size: 2.5rem; margin-bottom: 15px; color: #aaa;"></i>
-                                    <div>QR-код для бота</div>
-                                </div>
-                            </div>
+                            <img src="qr.png" alt="QR-код для перехода в Telegram-бота @TayniVlecheniaBot">
                             <p style="margin-top: 1.2rem; font-size: 1rem; color: var(--color-text-light);">
                                 Наведите камеру телефона на QR-код
                             </p>
@@ -971,295 +877,6 @@
                             <i class="fas fa-exclamation-triangle"></i> PDF-руководство доступно только в течение 3 минут!
                         </p>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- НОВЫЙ БЛОК СО СТАТЬЕЙ И КЛЮЧЕВИКАМИ -->
-        <section class="article-section fade-in">
-            <h2>«Как ему понравиться?»: Почему поиск «признаков внимания» и «секретов флирта» приводит в тупик</h2>
-            
-            <div class="article-content">
-                <p>Этот поисковый запрос, как и тысячи других вроде «как понять, что нравишься мужчине» или «что делать, если муж охладел», ежедневно вводится в Яндекс. В этих вопросах — не любопытство, а боль и страх. Огромный рынок «женского» образования часто эксплуатирует эту тревогу, предлагая быстрые техники и манипулятивные сценарии: «100 фраз для переписки», «5 приёмов, чтобы разжечь страсть». Однако такой подход, основанный на внешнем исполнении ролей, не только не решает проблему, но и усугубляет её, ведя к эмоциональному выгоранию и потере себя.</p>
-                
-                <p>Психологическая реальность, стоящая за этими запросами, гораздо глубже. Вопрос «Как ему понравиться?» на самом деле часто означает «Достоин ли я любви?». А «Что делать, если отношения стали рутиной?» — это крик о потере контакта, сначала с собой, а потом и с партнёром. Клинические данные показывают, что женщины в целом чаще мужчин сталкиваются с тревожными и депрессивными расстройствами, что во многом связано с грузом социальных ожиданий и ролей, которые им приходится выполнять. Постоянная необходимость «соответствовать», быть идеальной хозяйкой, матерью, любовницей и профессионалом создаёт перманентный стресс и чувство, что своей ценности всегда недостаточно.</p>
-                
-                <p>В контексте отношений это проявляется в «считывании» чужих сигналов вместо доверия собственным ощущениям. Женщина, ищущая в интернете «жесты, что нравитесь мужчине» или «признаки флирта мужчин», по сути, ищет внешнюю систему координат, потому что её внутренний компас сломан. Она делегирует другому право решать, желанна ли она, интересна ли она, существует ли она вообще как объект чужого внимания. Этот путь — путь зависимости, а не близости. Как отмечают эксперты, здоровые отношения строятся на взаимном уважении, открытом общении и принятии партнёра таким, какой он есть, со всеми его сильными и слабыми сторонами. Невозможно построить такие отношения, постоянно находясь в роли экзаменующегося, который должен сдать тест на привлекательность.</p>
-                
-                <p>Аналогичная ловушка ждёт тех, кто в кризисе ищет ответ на вопрос «как разжечь страсть». Внешние действия — новое бельё, сценарий свидания, освоенная техника — работают как аспирин, снимая симптом на час. Но если внутри — пустота, усталость, накопленные обиды или потеря собственной сексуальности, то любой «огонь» быстро угаснет. Психологи напоминают, что кризис в отношениях (часто наступающий после 5-7 лет совместной жизни) — это этап, когда исчезает образ идеального партнера и приходит понимание реального человека. Преодолеть этот кризис можно не манипуляциями, а через честный диалог, принятие и изменения, начатые с себя. Попытки же «привлечь внимание» охладевшего мужа через старые шаблоны обречены, потому что они не затрагивают сути проблемы — разрыва эмоциональной связи.</p>
-                
-                <p>Выход из этого замкнутого круга лежит в смене парадигмы: с внешнего фокуса («что он думает, чего он хочет») на внутренний («что я чувствую, что мне важно»). Это и есть та самая «возвращенная к себе» женственность, о которой говорят глубинные психологические программы. Не набор техник по соблазнению, а состояние внутренней цельности, из которого естественно рождается и уверенность, и притягательность, и способность выстраивать границы.</p>
-                
-                <p>Такой подход предполагает работу с глубинными установками:</p>
-                
-                <p>Переформулировать вопрос «Как ему понравиться?» в «Что делает меня живой и счастливой прямо сейчас?».</p>
-                
-                <p>Заменить поиск «признаков внимания от коллеги» на исследование «почему мне так важна его оценка и чего не хватает в моей жизни?».</p>
-                
-                <p>Прекратить «разжигать страсть» в партнёре и начать «разжигать» интерес к собственной жизни, своим желаниям и телу.</p>
-                
-                <p>Это сложнее, чем следовать готовому скрипту. Это требует смелости остаться наедине с собой, возможно, с помощью профессионального психолога. Но это единственный путь к устойчивым, здоровым отношениям, которые являются не доказательством состоятельности, а естественным продолжением внутренней наполненности. В следующий раз, вводя в поисковик очередной запрос о том, как понравиться, удержать или заинтересовать, стоит на секунду остановиться и спросить себя: «А чего я хочу на самом деле? Покоя? Быть услышанной? Вернуть себе себя?». Ответ на этот вопрос и будет первым шагом из тупика к настоящей близости.</p>
-            </div>
-            
-            <div class="keywords-block">
-                <div class="keywords-title">Теги запросов, связанные с отношениями и их улучшением:</div>
-                <div class="keywords-container">
-                    <span class="keyword-tag">вижу что нравлюсь мужчине</span>
-                    <span class="keyword-tag">груди что нравится мужчинам</span>
-                    <span class="keyword-tag">женственность как уверенность в себе</span>
-                    <span class="keyword-tag">жесты что нравитесь мужчине</span>
-                    <span class="keyword-tag">знаки что нравишься мужчине</span>
-                    <span class="keyword-tag">знакомство с мужчиной флирт с номером телефона</span>
-                    <span class="keyword-tag">знаю что нравлюсь мужчине</span>
-                    <span class="keyword-tag">к чему снится мужчина который нравится</span>
-                    <span class="keyword-tag">как ведут себя заинтересованные мужчины</span>
-                    <span class="keyword-tag">как вернуть женственность</span>
-                    <span class="keyword-tag">как вести себя чтобы заинтересовать мужчину</span>
-                    <span class="keyword-tag">как вести себя чтобы понравиться мужчине</span>
-                    <span class="keyword-tag">как дать понять мужчине что он нравится</span>
-                    <span class="keyword-tag">как дела вопрос мужчине чтобы заинтересовать</span>
-                    <span class="keyword-tag">как добавить женственности</span>
-                    <span class="keyword-tag">как женщине раскрыть свою женственность</span>
-                    <span class="keyword-tag">как заинтересовать бывшего мужчину</span>
-                    <span class="keyword-tag">как заинтересовать взрослого мужчину</span>
-                    <span class="keyword-tag">как заинтересовать женатого мужчина</span>
-                    <span class="keyword-tag">как заинтересовать мужчину</span>
-                    <span class="keyword-tag">как заинтересовать мужчину в отношениях</span>
-                    <span class="keyword-tag">как заинтересовать мужчину в постели</span>
-                    <span class="keyword-tag">как заинтересовать мужчину в разговоре</span>
-                    <span class="keyword-tag">как заинтересовать мужчину на первом свидании</span>
-                    <span class="keyword-tag">как заинтересовать мужчину на работе</span>
-                    <span class="keyword-tag">как заинтересовать мужчину на расстоянии</span>
-                    <span class="keyword-tag">как заинтересовать мужчину на свидании</span>
-                    <span class="keyword-tag">как заинтересовать мужчину перепиской пример</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по переписке</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по переписке какие</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по переписке какие вопросы</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по переписке психология</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по переписке психология примеры</span>
-                    <span class="keyword-tag">как заинтересовать мужчину по смс</span>
-                    <span class="keyword-tag">как заинтересовать мужчину психологические</span>
-                    <span class="keyword-tag">как заинтересовать мужчину психологические приемы</span>
-                    <span class="keyword-tag">как заинтересовать мужчину психологические приемы при общении</span>
-                    <span class="keyword-tag">как заинтересовать мужчину сексом</span>
-                    <span class="keyword-tag">как заинтересовать мужчину серьезными отношениями</span>
-                    <span class="keyword-tag">как заинтересовать сообщениями мужчину</span>
-                    <span class="keyword-tag">как можно заинтересовать мужчину</span>
-                    <span class="keyword-tag">как можно понравиться мужчине</span>
-                    <span class="keyword-tag">как мужчине развить женственность</span>
-                    <span class="keyword-tag">как намекнуть мужчине что он нравится</span>
-                    <span class="keyword-tag">как написать мужчине что он нравится</span>
-                    <span class="keyword-tag">как написать понравившемуся мужчине</span>
-                    <span class="keyword-tag">как научиться женственности</span>
-                    <span class="keyword-tag">как общаться с понравившимся мужчиной</span>
-                    <span class="keyword-tag">как определить женственность</span>
-                    <span class="keyword-tag">как ответить мужчине флиртом</span>
-                    <span class="keyword-tag">как отвечать чтобы заинтересовать мужчину</span>
-                    <span class="keyword-tag">как очень понравиться мужчине</span>
-                    <span class="keyword-tag">как по взгляду понять что нравишься мужчине</span>
-                    <span class="keyword-tag">как повысить женственность</span>
-                    <span class="keyword-tag">как повысить женственность и женскую энергию</span>
-                    <span class="keyword-tag">как подчеркнуть женственность</span>
-                    <span class="keyword-tag">как показать женственность</span>
-                    <span class="keyword-tag">как показать мужчине что он нравится</span>
-                    <span class="keyword-tag">как понравится мужчине при первой</span>
-                    <span class="keyword-tag">как понравится мужчине при первом</span>
-                    <span class="keyword-tag">как понравится старому мужчине</span>
-                    <span class="keyword-tag">как понравиться бывшему мужчине</span>
-                    <span class="keyword-tag">как понравиться взрослому мужчине</span>
-                    <span class="keyword-tag">как понравиться женатому мужчине</span>
-                    <span class="keyword-tag">как понравиться коллегам мужчинам</span>
-                    <span class="keyword-tag">как понравиться красивому мужчине</span>
-                    <span class="keyword-tag">как понравиться мужчине</span>
-                    <span class="keyword-tag">как понравиться мужчине в переписке</span>
-                    <span class="keyword-tag">как понравиться мужчине младше</span>
-                    <span class="keyword-tag">как понравиться мужчине на свидании</span>
-                    <span class="keyword-tag">как понравиться мужчине помладше</span>
-                    <span class="keyword-tag">как понравиться мужчине постарше</span>
-                    <span class="keyword-tag">как понравиться мужчине при встрече</span>
-                    <span class="keyword-tag">как понять понравилась ли мужчине</span>
-                    <span class="keyword-tag">как понять что женщина нравится мужчине</span>
-                    <span class="keyword-tag">как понять что заинтересовала мужчину</span>
-                    <span class="keyword-tag">как понять что мужчина заинтересован</span>
-                    <span class="keyword-tag">как понять что мужчина заинтересован в отношениях</span>
-                    <span class="keyword-tag">как понять что мужчина понравился женщине</span>
-                    <span class="keyword-tag">как понять что мужчине понравилось свидание</span>
-                    <span class="keyword-tag">как понять что мужчине понравился секс</span>
-                    <span class="keyword-tag">как понять что нравишься коллеге мужчине</span>
-                    <span class="keyword-tag">как понять что нравишься мужчине на работе</span>
-                    <span class="keyword-tag">как понять что нравишься мужчине по переписке</span>
-                    <span class="keyword-tag">как понять что ты нравишься мужчине</span>
-                    <span class="keyword-tag">как понять что ты понравилась мужчине</span>
-                    <span class="keyword-tag">как правильно понравиться мужчине</span>
-                    <span class="keyword-tag">как привлечь внимание женатого мужчины</span>
-                    <span class="keyword-tag">как привлечь внимание мужчины</span>
-                    <span class="keyword-tag">как привлечь внимание мужчины на расстоянии</span>
-                    <span class="keyword-tag">как привлечь женственность</span>
-                    <span class="keyword-tag">как привлечь мужчину своей мечты</span>
-                    <span class="keyword-tag">как привлечь понравившегося мужчину</span>
-                    <span class="keyword-tag">как принять женственность</span>
-                    <span class="keyword-tag">как пробудить в себе женственность</span>
-                    <span class="keyword-tag">как прокачать женственность</span>
-                    <span class="keyword-tag">как прокачать женственность и женскую</span>
-                    <span class="keyword-tag">как прокачать женственность и женскую энергию</span>
-                    <span class="keyword-tag">как проявлять женственность</span>
-                    <span class="keyword-tag">как работает женственность</span>
-                    <span class="keyword-tag">как разбудить женственность</span>
-                    <span class="keyword-tag">как развить в себе женственность и притягательность</span>
-                    <span class="keyword-tag">как развить женственность</span>
-                    <span class="keyword-tag">как развить женственность в себе советы</span>
-                    <span class="keyword-tag">как развить женственность и женскую энергию</span>
-                    <span class="keyword-tag">как раскрыть в себе женственность и притягательность</span>
-                    <span class="keyword-tag">как раскрыть женственность</span>
-                    <span class="keyword-tag">как раскрыть женственность и женскую энергию</span>
-                    <span class="keyword-tag">как реагировать на флирт мужчины</span>
-                    <span class="keyword-tag">как сказать мужчине что он нравится</span>
-                    <span class="keyword-tag">как сохранить женственность</span>
-                    <span class="keyword-tag">как часто пишет заинтересованный мужчина</span>
-                    <span class="keyword-tag">легкий флирт с мужчиной</span>
-                    <span class="keyword-tag">мужчина говорит что женщина нравится мужчине</span>
-                    <span class="keyword-tag">мужчина говорит что очень нравишься</span>
-                    <span class="keyword-tag">мужчина не пишет как заинтересовать</span>
-                    <span class="keyword-tag">мужчина пишет что нравлюсь ему</span>
-                    <span class="keyword-tag">мужчина скрывает что нравишься</span>
-                    <span class="keyword-tag">мужчинам что нравится попа</span>
-                    <span class="keyword-tag">мужчине нравится встречи что</span>
-                    <span class="keyword-tag">мужчины флирт знакомства</span>
-                    <span class="keyword-tag">нравится мужчина на работе что</span>
-                    <span class="keyword-tag">одежда привлекающая внимание мужчин</span>
-                    <span class="keyword-tag">понравился мужчина как сказать</span>
-                    <span class="keyword-tag">после флирта мужчина</span>
-                    <span class="keyword-tag">привлечь внимание коллеги мужчины</span>
-                    <span class="keyword-tag">привлечь внимание мужчины на работе</span>
-                    <span class="keyword-tag">признаки флирта мужчин</span>
-                    <span class="keyword-tag">признаки что ты нравишься мужчине</span>
-                    <span class="keyword-tag">признаки что ты нравишься мужчине коллеге</span>
-                    <span class="keyword-tag">прикольные смс мужчине для флирта своими</span>
-                    <span class="keyword-tag">психология как заинтересовать мужчину</span>
-                    <span class="keyword-tag">психология мужчин флирт</span>
-                    <span class="keyword-tag">тайна женственности или как</span>
-                    <span class="keyword-tag">тайна женственности или как женщине</span>
-                    <span class="keyword-tag">тайны женственности или как раскрыть</span>
-                    <span class="keyword-tag">флирт вопросы мужчине</span>
-                    <span class="keyword-tag">флирт глазами мужчины</span>
-                    <span class="keyword-tag">флирт девушки с мужчиной</span>
-                    <span class="keyword-tag">флирт женатого мужчины</span>
-                    <span class="keyword-tag">флирт жены с мужчиной</span>
-                    <span class="keyword-tag">флирт коллеги мужчины</span>
-                    <span class="keyword-tag">флирт между мужчиной и женщиной примеры</span>
-                    <span class="keyword-tag">флирт мужчине на расстоянии</span>
-                    <span class="keyword-tag">флирт мужчины на работе</span>
-                    <span class="keyword-tag">флирт мужчины с другими женщинами</span>
-                    <span class="keyword-tag">флирт мужчины с женщиной</span>
-                    <span class="keyword-tag">флирт нравится мужчинам</span>
-                    <span class="keyword-tag">флирт общение с мужчиной</span>
-                    <span class="keyword-tag">флирт с бывшим мужчиной</span>
-                    <span class="keyword-tag">флирт с мужчиной</span>
-                    <span class="keyword-tag">флирт с мужчиной другом</span>
-                    <span class="keyword-tag">флирт с мужчиной по смс</span>
-                    <span class="keyword-tag">флирт с мужчиной примеры</span>
-                    <span class="keyword-tag">флирт слова мужчине</span>
-                    <span class="keyword-tag">флирт со стороны мужчины</span>
-                    <span class="keyword-tag">флирт умного мужчины</span>
-                    <span class="keyword-tag">форум как заинтересовать мужчину</span>
-                    <span class="keyword-tag">фразы для флирта с мужчиной</span>
-                    <span class="keyword-tag">хочу привлечь внимание мужчины</span>
-                    <span class="keyword-tag">чем нравятся мужчины постарше</span>
-                    <span class="keyword-tag">чем поцелуй нравится мужчинам</span>
-                    <span class="keyword-tag">что больше всего нравится мужчинам</span>
-                    <span class="keyword-tag">что больше всего нравится мужчинам в сексе</span>
-                    <span class="keyword-tag">что делает женщину привлекательной</span>
-                    <span class="keyword-tag">что делать если тебе нравится мужчина</span>
-                    <span class="keyword-tag">что значит женщина нравится мужчине</span>
-                    <span class="keyword-tag">что значит нравится мужчине</span>
-                    <span class="keyword-tag">что любит нравится мужчине</span>
-                    <span class="keyword-tag">что написать мужчине чтобы привлечь его внимание</span>
-                    <span class="keyword-tag">что нравится взрослым мужчинам</span>
-                    <span class="keyword-tag">что нравится женатым мужчинам</span>
-                    <span class="keyword-tag">что нравится мужчинам в женщинах</span>
-                    <span class="keyword-tag">что нравится мужчинам в отношениях</span>
-                    <span class="keyword-tag">что нравится мужчинам в постели</span>
-                    <span class="keyword-tag">что нравится мужчинам в сексе</span>
-                    <span class="keyword-tag">что нравится мужчинам во время</span>
-                    <span class="keyword-tag">что нравится мужчинам во время секса</span>
-                    <span class="keyword-tag">что нравится мужчинам девам</span>
-                    <span class="keyword-tag">что нравится мужчинам форум</span>
-                    <span class="keyword-tag">что означает нравлюсь мужчине</span>
-                    <span class="keyword-tag">что очень нравится мужчинам</span>
-                    <span class="keyword-tag">что писать мужчине чтобы привлечь внимание</span>
-                    <span class="keyword-tag">что подарить мужчине который нравится</span>
-                    <span class="keyword-tag">что ты нравишься мужчине по коллеге</span>
-                    <span class="keyword-tag">чувство что нравишься мужчине</span>
-                    <span class="keyword-tag">чувствую что нравлюсь мужчине</span>
-                    <span class="keyword-tag">энергия женственности как развить</span>
-                    <span class="keyword-tag">беременность охладел муж</span>
-                    <span class="keyword-tag">бывший муж охладел</span>
-                    <span class="keyword-tag">идеи для романтического свидания с мужем</span>
-                    <span class="keyword-tag">идеи для свиданий с мужем</span>
-                    <span class="keyword-tag">как вернуть близость с мужем</span>
-                    <span class="keyword-tag">как вернуть интимную близость с мужчиной</span>
-                    <span class="keyword-tag">как вернуть отношения на грани развода</span>
-                    <span class="keyword-tag">как вернуть романтику в отношения</span>
-                    <span class="keyword-tag">как вернуть романтику в отношения с мужем</span>
-                    <span class="keyword-tag">как вернуть романтику в отношения с парнем</span>
-                    <span class="keyword-tag">как восстановить отношения на грани развода</span>
-                    <span class="keyword-tag">как наладить отношения с мужем</span>
-                    <span class="keyword-tag">как наладить отношения с мужем после</span>
-                    <span class="keyword-tag">как наладить отношения с парнем</span>
-                    <span class="keyword-tag">как понять что муж охладел к жене</span>
-                    <span class="keyword-tag">как привлечь мужа если он охладел</span>
-                    <span class="keyword-tag">как привлечь охладевшего мужа</span>
-                    <span class="keyword-tag">как разжечь огонь страсти</span>
-                    <span class="keyword-tag">как разжечь страсть</span>
-                    <span class="keyword-tag">как разжечь страсть в отношениях</span>
-                    <span class="keyword-tag">как разжечь страсть мужа</span>
-                    <span class="keyword-tag">как разжечь страсть мужчины к женщине</span>
-                    <span class="keyword-tag">как разжечь страсть у мужчины</span>
-                    <span class="keyword-tag">как сохранить отношения на грани развода</span>
-                    <span class="keyword-tag">как спасти отношения на грани развода</span>
-                    <span class="keyword-tag">как узнать что муж охладел</span>
-                    <span class="keyword-tag">муж говорит что охладел</span>
-                    <span class="keyword-tag">муж и жена охладели</span>
-                    <span class="keyword-tag">муж охладевает что делать</span>
-                    <span class="keyword-tag">муж охладел</span>
-                    <span class="keyword-tag">муж охладел и отдалился</span>
-                    <span class="keyword-tag">муж охладел к жене признаки и причины</span>
-                    <span class="keyword-tag">муж охладел к жене причины</span>
-                    <span class="keyword-tag">муж охладел к жене совет психолога</span>
-                    <span class="keyword-tag">муж охладел к ребенку</span>
-                    <span class="keyword-tag">муж охладел к сексу</span>
-                    <span class="keyword-tag">муж охладел после</span>
-                    <span class="keyword-tag">муж охладел после измены</span>
-                    <span class="keyword-tag">муж охладел после рождения</span>
-                    <span class="keyword-tag">муж охладел признаки</span>
-                    <span class="keyword-tag">муж охладел причины</span>
-                    <span class="keyword-tag">муж охладел что делать жене советы</span>
-                    <span class="keyword-tag">муж охладел что делать советы психолога</span>
-                    <span class="keyword-tag">муж разлюбил как понять что охладел</span>
-                    <span class="keyword-tag">муж резко охладел</span>
-                    <span class="keyword-tag">муж резко охладел к жене причины</span>
-                    <span class="keyword-tag">муж сказал что охладел ко мне</span>
-                    <span class="keyword-tag">муж стал охладевать</span>
-                    <span class="keyword-tag">наладить отношения на грани развода</span>
-                    <span class="keyword-tag">отношение с мужем на грани развода</span>
-                    <span class="keyword-tag">отношения стали рутиной</span>
-                    <span class="keyword-tag">охладела к мужу психолог</span>
-                    <span class="keyword-tag">охладела к мужу форум</span>
-                    <span class="keyword-tag">охладела к мужу что делать</span>
-                    <span class="keyword-tag">охладела к мужу что делать советы</span>
-                    <span class="keyword-tag">охладели отношения с мужем</span>
-                    <span class="keyword-tag">охладели чувства мужа</span>
-                    <span class="keyword-tag">после родов муж охладел</span>
-                    <span class="keyword-tag">почему муж охладевает</span>
-                    <span class="keyword-tag">почему муж охладевает после родов</span>
-                    <span class="keyword-tag">почему муж охладел</span>
-                    <span class="keyword-tag">почему муж охладел к жене</span>
-                    <span class="keyword-tag">почему муж охладел причина</span>
-                    <span class="keyword-tag">почему мужья охладевают к женам</span>
-                    <span class="keyword-tag">почему после родов муж охладел</span>
-                    <span class="keyword-tag">советы если муж охладел к жене</span>
-                    <span class="keyword-tag">советы психолога если муж охладел</span>
-                    <span class="keyword-tag">чувствую что муж охладел</span>
                 </div>
             </div>
         </section>
