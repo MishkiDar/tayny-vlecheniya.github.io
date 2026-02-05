@@ -6,6 +6,32 @@
     <title>Скидка 100% на вебинар «3 секрета ярких любовных отношений» - KuponDeals</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+// Получаем client_id Яндекс.Метрики (вашего счётчика)
+function getYandexClientId() {
+    if (typeof ym !== 'undefined' && ym.getClientID) {
+        // Пробуем получить через API нового счётчика
+        return ym.getClientID();
+    }
+    // Запасной вариант: попробовать получить из cookie старого счётчика
+    var match = document.cookie.match(/_ym_uid=([^;]+)/);
+    return match ? match[1] : null;
+}
+// Когда страница загружена, модифицируем ссылки на оффер
+document.addEventListener('DOMContentLoaded', function() {
+    var yandexClientId = getYandexClientId();
+    if (yandexClientId) {
+        // Находим ВСЕ ссылки, ведущие на оффер, и добавляем параметр ymuid
+        var links = document.querySelectorAll('a[href*="femalecollege.site"]'); // Уточните селектор под ваши ссылки
+        links.forEach(function(link) {
+            var url = new URL(link.href);
+            url.searchParams.set('ymuid', yandexClientId); // Добавляем наш client_id как параметр 'ymuid'
+            link.href = url.toString();
+        });
+    }
+});
+</script>
+    
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
