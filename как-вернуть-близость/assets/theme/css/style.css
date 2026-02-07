@@ -955,7 +955,290 @@ blockquote {
     width: 300% !important;
     left: -100% !important;
   }
-}.engine {
+}
+/* ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ВИДЕО-БЛОКОВ (добавлено в конец файла) */
+
+/* Переопределяем белый фон для наших видео-блоков */
+#author-words,
+#participant-review,
+#bonus-program {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Фоновые градиенты для разных блоков - ЯРКИЕ И НАСЫЩЕННЫЕ */
+#author-words .block-container {
+    background: linear-gradient(135deg, #ff6b4a 0%, #ff9a3d 100%) !important;
+    /* Усиленный оранжево-красный градиент */
+}
+
+#participant-review .block-container {
+    background: linear-gradient(135deg, #5a0cb1 0%, #1c6ef7 100%) !important;
+    /* Более насыщенный фиолетово-синий градиент */
+}
+
+#bonus-program .block-container {
+    background: linear-gradient(135deg, #ff2d55 0%, #ff3a30 100%) !important;
+    /* Яркий розово-красный градиент */
+}
+
+/* Стили для контейнеров блоков */
+.content-block {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.content-block .block-container {
+    position: relative;
+    padding: 4rem 1rem;
+    overflow: hidden;
+}
+
+/* Заголовки блоков */
+.content-block .block-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    padding-top: 2rem;
+}
+
+/* Общий враппер контента */
+.content-block .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Стили для блоков с вертикальным видео */
+.content-block .video-block {
+    padding: 2.5rem;
+    border-radius: 25px;
+    margin: 0 auto;
+    max-width: 850px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    overflow: hidden;
+    /* Более прозрачный фон, чтобы основной градиент просвечивал */
+    background: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ОБНОВЛЕННЫЕ градиентные фоны для видео-блоков - ТЕПЕРЬ С НАСЫЩЕННЫМИ ЦВЕТАМИ, СООТВЕТСТВУЮЩИМИ ОСНОВНОМУ ФОНУ */
+#author-words .video-block {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 240, 220, 0.9) 30%,
+        rgba(255, 225, 190, 0.8) 70%,
+        rgba(255, 210, 160, 0.75) 100%) !important;
+    /* Теплые оранжевые тона, соответствующие основному градиенту */
+}
+
+#participant-review .video-block {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(235, 225, 255, 0.9) 30%,
+        rgba(220, 210, 250, 0.8) 70%,
+        rgba(205, 195, 245, 0.75) 100%) !important;
+    /* Фиолетово-синие тона, соответствующие основному градиенту */
+}
+
+#bonus-program .video-block {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 225, 235, 0.9) 30%,
+        rgba(255, 210, 220, 0.8) 70%,
+        rgba(255, 195, 205, 0.75) 100%) !important;
+    /* Розово-красные тона, соответствующие основному градиенту */
+}
+
+/* Декоративная обводка для видео-блоков - ТЕПЕРЬ БОЛЕЕ ЗАМЕТНАЯ */
+.content-block .video-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    padding: 4px;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0.8) 100%) !important;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Дополнительный внутренний свечение для видео-блоков */
+.content-block .video-block::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 23px;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0.3) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Вертикальное видео */
+.content-block .vertical-video-wrapper {
+    max-width: 375px;
+    margin: 0 auto 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    background: #000;
+    position: relative;
+    z-index: 2;
+    /* Добавляем белую рамку вокруг видео */
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.content-block .vertical-video-wrapper iframe {
+    width: 100%;
+    height: 812px;
+    display: block;
+    border: none;
+}
+
+/* CTA-кнопки */
+.content-block .cta-button {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 2.5rem auto 0;
+    padding: 1.3rem 2.5rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.5);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.content-block .cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(231, 76, 60, 0.6);
+    background: linear-gradient(135deg, #ff5c4d 0%, #d63031 100%);
+}
+
+.content-block .cta-button:active {
+    transform: translateY(-1px);
+}
+
+.content-block .cta-button::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+}
+
+.content-block .cta-button:hover::after {
+    transform: translateY(-50%) translateX(7px);
+}
+
+/* Декоративный фон для блоков - СДЕЛАЕМ БОЛЕЕ ЗАМЕТНЫМ */
+.content-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.12)" d="M0,0 L100,0 L100,100 Z"/></svg>');
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .content-block .block-title {
+        font-size: 1.8rem;
+        padding-top: 1.5rem;
+    }
+    
+    .content-block .block-container {
+        padding: 2rem 1rem;
+    }
+    
+    .content-block .video-block {
+        padding: 1.8rem;
+        margin: 0 1rem 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .content-block .vertical-video-wrapper {
+        max-width: 100%;
+        border-width: 2px;
+    }
+    
+    .content-block .vertical-video-wrapper iframe {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .content-block .cta-button {
+        padding: 1.1rem 2rem;
+        font-size: 1.2rem;
+        max-width: 300px;
+    }
+    
+    .content-block .video-block::before,
+    .content-block .video-block::after {
+        border-radius: 18px;
+    }
+}
+
+/* Десктоп улучшения */
+@media (min-width: 992px) {
+    .content-block .block-title {
+        font-size: 3rem;
+    }
+    
+    .content-block .video-block {
+        padding: 3.5rem;
+        max-width: 900px;
+    }
+    
+    .content-block .cta-button {
+        font-size: 1.4rem;
+        padding: 1.4rem 3rem;
+    }
+}
+
+.engine {
 	position: absolute;
 	text-indent: -2400px;
 	text-align: center;
